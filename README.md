@@ -1,3 +1,5 @@
+![cover](/img/cover.png)
+
 # Codeforces Year in Review
 A web-based visualization tool that generates personalized annual reports for Codeforces users, showcasing their competitive programming journey throughout 2024.
 
@@ -10,6 +12,7 @@ A web-based visualization tool that generates personalized annual reports for Co
 - 🌍 Timezone-aware submissions analysis
 - 🎨 Beautiful, responsive design with smooth animations
 
+![features](/img/final.png)
 ## How It Works
 
 The application follows a simple flow:
