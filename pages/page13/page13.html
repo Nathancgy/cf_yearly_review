@@ -1,0 +1,113 @@
+<style>
+    .luck-reveal-page {
+        font-family: 'Roboto', 'Courier New', monospace;
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: #e94560;
+        min-height: 100vh;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+    }
+    .luck-container {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        padding: 30px;
+        width: 90%;
+        max-width: 600px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+    .luck-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px #e94560;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+    .code-block {
+        background-color: #0f3460;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+        overflow-x: auto;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+    .code-block pre {
+        margin: 0;
+        white-space: pre-wrap;
+    }
+    .reveal-button {
+        background-color: #e94560;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    .reveal-button:hover {
+        background-color: #ff6b6b;
+        transform: translateY(-2px);
+    }
+    .luck-result {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    .typing-effect {
+        overflow: hidden;
+        border-right: .15em solid #e94560;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: 
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+    }
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #e94560; }
+    }
+    .floating-code {
+        position: absolute;
+        color: rgba(233, 69, 96, 0.2);
+        font-size: 12px;
+        pointer-events: none;
+        user-select: none;
+        white-space: nowrap;
+        text-shadow: 0 0 5px rgba(233, 69, 96, 0.3);
+    }
+</style>
+
+<div class="luck-reveal-page">
+    <div class="luck-container">
+        <h2 class="luck-title">Reveal Your Coding Luck for 2025</h2>
+        <div class="code-block">
+            <pre><code class="typing-effect">function revealLuck() {
+    const luck = Math.floor(Math.random() * 10);
+    return codingFortunes[luck];
+}</code></pre>
+        </div>
+        <button id="reveal-button" class="reveal-button">Run Code</button>
+        <div id="luck-result" class="luck-result"></div>
+    </div>
+</div>

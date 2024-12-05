@@ -1,0 +1,73 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation buttons */
+#prev-page, #next-page {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #4a90e2;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+#prev-page:hover, #next-page:hover {
+    background-color: #357abd;
+    transform: translateY(-50%) scale(1.1);
+}
+
+#prev-page {
+    left: 20px;
+}
+
+#next-page {
+    right: 20px;
+}
+
+/* Responsive design for buttons */
+@media (max-width: 768px) {
+    #prev-page, #next-page {
+        width: 50px;
+        height: 50px;
+        font-size: 0.9rem;
+    }
+
+    #prev-page {
+        left: 10px;
+    }
+
+    #next-page {
+        right: 10px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}

@@ -1,0 +1,131 @@
+<style>
+    /* Page 1 Styles */
+    .welcome-page {
+        font-family: 'Roboto', Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 50px 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    .user-info {
+        text-align: center;
+        margin-bottom: 40px;
+        animation: fadeInDown 0.6s ease-out;
+    }
+    .user-avatar {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+    .user-avatar:hover {
+        transform: scale(1.05);
+    }
+    .user-info h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+    .user-info p {
+        font-size: 1.5rem;
+        opacity: 0.9;
+    }
+    .user-stats {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 800px;
+        animation: fadeInUp 0.6s ease-out;
+    }
+    .stat-item {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 25px;
+        flex: 1 1 200px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .stat-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .stat-item h3 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #ffd700;
+    }
+    .stat-item p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+    @media (max-width: 768px) {
+        .user-info h1 {
+            font-size: 2.5rem;
+        }
+        .user-info p {
+            font-size: 1.2rem;
+        }
+        .stat-item h3 {
+            font-size: 2rem;
+        }
+        .stat-item p {
+            font-size: 1rem;
+        }
+    }
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<div class="welcome-page">
+    <div class="user-info">
+        <img id="user-avatar" alt="User Avatar" class="user-avatar">
+        <h1 id="user-name">Welcome!</h1>
+        <p>Your Codeforces journey in 2024 starts here.</p>
+    </div>
+    <div class="user-stats">
+        <div class="stat-item">
+            <h3 id="current-rating">N/A</h3>
+            <p id="current-rank">Current Rating</p>
+        </div>
+        <div class="stat-item">
+            <h3 id="max-rating">N/A</h3>
+            <p id="max-rank">Max Rating</p>
+        </div>
+        <div class="stat-item" id="location-item" style="display:none;">
+            <h3 id="location"></h3>
+            <p>Location</p>
+        </div>
+        <div class="stat-item" id="organization-item" style="display:none;">
+            <h3 id="organization"></h3>
+            <p>Organization</p>
+        </div>
+    </div>
+</div>

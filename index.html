@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Your Codeforces Year in Review</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="/img/bbb.png">
+    <link rel="stylesheet" href="css/fonts/custom-fonts.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div id="welcome-container">
+        <div class="welcome-content">
+            <h1>Welcome to Your Codeforces Year in Review</h1>
+            <p>Enter your Codeforces handle and select your time zone to begin.</p>
+
+            <form id="user-form">
+                <label for="handle">Codeforces Handle:</label>
+                <input type="text" id="handle" name="handle" required>
+
+                <label for="timezone">Time Zone:</label>
+                <select id="timezone" name="timezone" required>
+                </select>
+
+                <button type="submit">Begin My Journey</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="loading-overlay" class="hidden">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Fetching your Codeforces data...</p>
+        </div>
+    </div>
+
+    <script src="js/timezones.js"></script>
+    <script src="js/timeZoneConverter.js"></script>
+    <script src="js/dataFetcher.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

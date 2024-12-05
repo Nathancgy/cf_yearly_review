@@ -1,0 +1,89 @@
+<style>
+    /* Page 11 Styles */
+    .highest-rated-page {
+        font-family: 'Roboto', Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        min-height: 100vh;
+        padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .highest-rated-page h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .highest-rated-container {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 30px;
+        width: 90%;
+        max-width: 600px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+    .star-icon {
+        font-size: 5rem;
+        margin-bottom: 20px;
+        color: #FFD700;
+    }
+    .highest-rated-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #FFD700;
+    }
+    .highest-rated-details {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    .significance {
+        font-style: italic;
+        margin-top: 20px;
+    }
+    @media (max-width: 768px) {
+        .highest-rated-page h2 {
+            font-size: 2rem;
+        }
+        .highest-rated-title {
+            font-size: 1.5rem;
+        }
+        .highest-rated-details {
+            font-size: 1rem;
+        }
+    }
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .highest-rated-container {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+</style>
+
+<div class="highest-rated-page">
+    <h2>Your Highest Rated Conquest</h2>
+    <div class="highest-rated-container">
+        <div class="star-icon">⭐</div>
+        <h3 class="highest-rated-title" id="highest-rated-title">
+            <!-- Title will be inserted here by JavaScript -->
+        </h3>
+        <div class="highest-rated-details" id="highest-rated-details">
+            <!-- Details will be inserted here by JavaScript -->
+        </div>
+        <p class="significance" id="significance">
+            <!-- Significance will be inserted here by JavaScript -->
+        </p>
+    </div>
+</div>

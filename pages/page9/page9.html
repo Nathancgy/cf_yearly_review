@@ -1,0 +1,70 @@
+<style>
+    /* Page 9 Styles */
+    .activity-distribution-page {
+        font-family: 'Roboto', Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        min-height: 100vh;
+        padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .activity-distribution-page h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .activity-distribution-container {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 30px;
+        width: 90%;
+        max-width: 600px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .activity-summary {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+    #weekday-chart {
+        width: 100%;
+        height: 300px;
+    }
+    @media (max-width: 768px) {
+        .activity-distribution-page h2 {
+            font-size: 2rem;
+        }
+        .activity-summary {
+            font-size: 1rem;
+        }
+    }
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .activity-distribution-container {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+</style>
+
+<div class="activity-distribution-page">
+    <h2>Your Coding Rhythm</h2>
+    <div class="activity-distribution-container">
+        <canvas id="weekday-chart"></canvas>
+        <div class="activity-summary" id="activity-summary">
+            <!-- Summary text will be inserted here by JavaScript -->
+        </div>
+    </div>
+</div>

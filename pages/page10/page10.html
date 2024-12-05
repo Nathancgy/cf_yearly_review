@@ -1,0 +1,77 @@
+<style>
+    /* Page 10 Styles */
+    .latest-solve-page {
+        font-family: 'Roboto', Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        min-height: 100vh;
+        padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .latest-solve-page h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .latest-solve-container {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 30px;
+        width: 90%;
+        max-width: 600px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+    .sleep-icon {
+        font-size: 5rem;
+        margin-bottom: 20px;
+    }
+    .latest-solve-details {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    .sleep-reminder {
+        font-style: italic;
+        margin-top: 20px;
+    }
+    @media (max-width: 768px) {
+        .latest-solve-page h2 {
+            font-size: 2rem;
+        }
+        .latest-solve-details {
+            font-size: 1rem;
+        }
+    }
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .latest-solve-container {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+</style>
+
+<div class="latest-solve-page">
+    <h2>Your Latest Night Owl Solve</h2>
+    <div class="latest-solve-container">
+        <div class="sleep-icon">💤</div>
+        <div class="latest-solve-details" id="latest-solve-details">
+            <!-- Details will be inserted here by JavaScript -->
+        </div>
+        <p class="sleep-reminder" id="sleep-reminder">
+            <!-- Reminder will be inserted here by JavaScript -->
+        </p>
+    </div>
+</div>

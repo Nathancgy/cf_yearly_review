@@ -1,0 +1,197 @@
+<style>
+    /* Page 12 Styles */
+    .summary-page {
+        font-family: 'Roboto', Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        min-height: 100vh;
+        padding: 15px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto repeat(2, minmax(200px, auto));
+        gap: 15px;
+    }
+    .summary-title {
+        grid-column: 1 / -1;
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .summary-item {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .summary-item.short {
+        padding: 5px;
+    }
+    .summary-icon {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+    .summary-label {
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .summary-value {
+        font-size: 1rem;
+    }
+    .chart-container {
+        width: 100%;
+        height: 100%;
+        min-height: 150px;
+    }
+    .full-width {
+        grid-column: 1 / -1;
+    }
+    .half-width {
+        grid-column: span 2;
+    }
+    .summary-item.stacked {
+        grid-row: span 2;
+        justify-content: space-around;
+    }
+    .stacked-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .weekday-distribution {
+        grid-row: span 2;
+    }
+    @media (max-width: 768px) {
+        .summary-page {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .half-width, .weekday-distribution {
+            grid-column: 1 / -1;
+        }
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        font-size: 0.8rem;
+    }
+    .legend-color {
+        width: 12px;
+        height: 12px;
+        margin-right: 5px;
+        border-radius: 50%;
+    }
+    #languages-legend {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .download-button-container {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .download-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+        transition: background-color 0.3s;
+    }
+
+    .download-button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<div class="summary-page">
+    <h2 class="summary-title">Your Codeforces 2024 in Review</h2>
+    
+    <div class="summary-item short">
+        <div class="summary-icon">🏆</div>
+        <div class="summary-label">Total Problems Solved</div>
+        <div class="summary-value" id="total-solved"></div>
+    </div>
+    
+    <div class="summary-item short">
+        <div class="summary-icon">📊</div>
+        <div class="summary-label">Current Rating</div>
+        <div class="summary-value" id="current-rating"></div>
+    </div>
+    
+    <div class="summary-item short">
+        <div class="summary-icon">🚀</div>
+        <div class="summary-label">Max Rating</div>
+        <div class="summary-value" id="max-rating"></div>
+    </div>
+    
+    <div class="summary-item half-width">
+        <div class="summary-label">Rating Progression</div>
+        <div class="chart-container">
+            <canvas id="rating-chart"></canvas>
+        </div>
+    </div>
+    
+    <div class="summary-item">
+        <div class="summary-icon">⚡</div>
+        <div class="summary-label">Fastest Solve</div>
+        <div class="summary-value" id="fastest-solve"></div>
+    </div>
+    
+    <div class="summary-item half-width">
+        <div class="summary-label">Top Problem Tags</div>
+        <div class="chart-container">
+            <canvas id="tags-chart"></canvas>
+        </div>
+    </div>
+    
+    <div class="summary-item">
+        <div class="summary-icon">💻</div>
+        <div class="summary-label">Languages Used</div>
+        <div class="chart-container">
+            <canvas id="languages-chart"></canvas>
+        </div>
+        <div id="languages-legend"></div>
+    </div>
+    
+    <div class="summary-item half-width weekday-distribution">
+        <div class="summary-label">Activity Distribution</div>
+        <div class="chart-container">
+            <canvas id="weekday-chart"></canvas>
+        </div>
+    </div>
+    
+    <div class="summary-item stacked">
+        <div class="stacked-item">
+            <div class="summary-icon">🏔️</div>
+            <div class="summary-label">Most Challenging Problem</div>
+            <div class="summary-value" id="challenging-problem"></div>
+        </div>
+        <div class="stacked-item">
+            <div class="summary-icon">💤</div>
+            <div class="summary-label">Latest Night Owl Solve</div>
+            <div class="summary-value" id="latest-solve"></div>
+        </div>
+    </div>
+</div>

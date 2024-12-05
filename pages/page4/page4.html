@@ -1,0 +1,116 @@
+<style>
+    /* Page 4 Styles */
+    .submissions-page {
+        font-family: 'Roboto', Arial, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        min-height: 100vh;
+        padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .submissions-page h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .submission-container {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 30px;
+        width: 90%;
+        max-width: 800px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .submission-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: #ffd700;
+    }
+    .problem-details {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .problem-icon {
+        width: 80px;
+        height: 80px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #764ba2;
+    }
+    .problem-info {
+        flex-grow: 1;
+    }
+    .problem-name {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .problem-meta {
+        font-size: 1rem;
+        opacity: 0.8;
+    }
+    @media (max-width: 768px) {
+        .submissions-page h2 {
+            font-size: 2rem;
+        }
+        .submission-title {
+            font-size: 1.5rem;
+        }
+        .problem-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+        }
+        .problem-name {
+            font-size: 1.2rem;
+        }
+    }
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .submission-container {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+</style>
+
+<div class="submissions-page">
+    <h2>First and Last Submissions of 2024</h2>
+    <div class="submission-container" id="first-submission">
+        <h3 class="submission-title">Your Year Kicked Off With:</h3>
+        <div class="problem-details">
+            <div class="problem-icon">1st</div>
+            <div class="problem-info">
+                <p class="problem-name" id="first-problem-name"></p>
+                <p class="problem-meta" id="first-problem-meta"></p>
+            </div>
+        </div>
+    </div>
+    <div class="submission-container" id="last-submission">
+        <h3 class="submission-title">You Wrapped Up the Year With:</h3>
+        <div class="problem-details">
+            <div class="problem-icon">Last</div>
+            <div class="problem-info">
+                <p class="problem-name" id="last-problem-name"></p>
+                <p class="problem-meta" id="last-problem-meta"></p>
+            </div>
+        </div>
+    </div>
+</div>
