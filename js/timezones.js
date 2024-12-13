@@ -1,6 +1,6 @@
-2// timezones.js
+// timezones.js
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const timeZoneSelect = document.getElementById('timezone');
     console.log('Timezone select element:', timeZoneSelect);
 
@@ -71,8 +71,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('Final number of options:', timeZoneSelect.options.length);
 
-    // Set default time zone based on user's browser
-    const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
-    console.log('User timezone:', userTimeZone);
-    timeZoneSelect.value = userTimeZone;
+    // Get timezone from IP
+    try {
+        const response = await fetch('http://worldtimeapi.org/api/ip');
+        const data = await response.json();
+        const ipTimezone = data.timezone;
+        
+        if (ipTimezone && timeZones.some(tz => tz.value === ipTimezone)) {
+            timeZoneSelect.value = ipTimezone;
+        } else {
+            // Fallback to browser's timezone
+            timeZoneSelect.value = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+        }
+    } catch (error) {
+        console.error('Error detecting timezone:', error);
+        // Fallback to browser's timezone
+        timeZoneSelect.value = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+    }
 });
