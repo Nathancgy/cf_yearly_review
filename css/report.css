@@ -1,3 +1,9 @@
+:root {
+  --nav-button-size: 60px;
+  --nav-button-color: #4a90e2;
+  --nav-button-hover: #357abd;
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -15,59 +21,88 @@ body {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #4a90e2;
+    width: var(--nav-button-size);
+    height: var(--nav-button-size);
+    background-color: var(--nav-button-color);
     color: #ffffff;
     border: none;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     z-index: 1000;
 }
 
 #prev-page:hover, #next-page:hover {
-    background-color: #357abd;
+    background-color: var(--nav-button-hover);
     transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
 }
 
 #prev-page {
-    left: 20px;
+    left: 30px;
 }
 
 #next-page {
-    right: 20px;
+    right: 30px;
 }
 
 /* Responsive design for buttons */
 @media (max-width: 768px) {
-    #prev-page, #next-page {
-        width: 50px;
-        height: 50px;
-        font-size: 0.9rem;
+    :root {
+        --nav-button-size: 50px;
     }
 
     #prev-page {
-        left: 10px;
+        left: 15px;
     }
 
     #next-page {
-        right: 10px;
+        right: 15px;
     }
 }
 
-/* Animations */
+@media (max-width: 480px) {
+    :root {
+        --nav-button-size: 40px;
+    }
+
+    #prev-page, #next-page {
+        font-size: 1.2rem;
+    }
+}
+
+/* Enhanced Animations */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .fade-in {
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-in {
+    animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
