@@ -3,6 +3,8 @@
 # Codeforces Year in Review
 A web-based visualization tool that generates personalized annual reports for Codeforces users, showcasing their competitive programming journey throughout 2024.
 
+Try it now: https://nathanchen.me/projects/cf_review/index.html
+
 ## Features
 
 - 📊 Interactive data visualization of your Codeforces performance
